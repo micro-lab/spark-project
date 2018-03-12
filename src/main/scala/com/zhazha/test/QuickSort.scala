@@ -1,8 +1,9 @@
-package com.zhazha.sparkstreaming
+package com.zhazha.test
 
 class QuickSort {
   def quickSort(src: Array[Int], begin: Int, end: Int) {
     if (begin < end) {
+      println(" begin:"+begin+" end:"+end)
       val key = src(begin)
       var i = begin
       var j = end
@@ -14,7 +15,7 @@ class QuickSort {
           src(i) = src(j)
           i += 1
         }
-        while (i < j && src(j) < key) {
+        while (i < j && src(i) < key) {
           i += 1
         }
         if (i < j) {
@@ -23,8 +24,10 @@ class QuickSort {
         }
       }
       src(i) = key
+
       quickSort(src, begin, i - 1)
       quickSort(src, i + 1, end)
     }
   }
+
 }
